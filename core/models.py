@@ -10,7 +10,7 @@ class Carro(models.Model):
     descricao = models.CharField(max_length=255)
     modelo = models.CharField(max_length=100)
     cor = models.CharField(max_length=50)
-    ano = models.DateField()
+    ano = models.IntegerField()
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -9,7 +9,7 @@ def cadastro(request):
     form = CarroForm(request.POST)
     if form.is_valid():
         form.save()
-        return redirect('list_carros')
+        return redirect('lista')
     return render(request, 'core/form.html', {'form': form})
 
 

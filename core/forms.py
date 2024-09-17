@@ -9,6 +9,6 @@ class CarroForm(forms.ModelForm):
             'descricao': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Descrição'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Modelo'}),
             'cor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cor'}),
-            'ano': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Ano'}),
+            'ano': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ano'}),
             'marca': forms.Select(attrs={'class': 'form-select'})
         }
