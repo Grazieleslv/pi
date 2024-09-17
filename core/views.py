@@ -36,5 +36,5 @@ def deletar(request, id):
     carro = Carro.objects.get(id=id)
     if request.method == 'POST':
         carro.delete()
-        return redirect('list_carros')
+        return redirect('lista')
     return render(request, 'delete_confirm.html', {'carro': carro})
