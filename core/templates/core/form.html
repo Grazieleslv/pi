@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+
+    <h2>{% if carro %}Editar Carro{% else %}Adicionar Novo Carro{% endif %}</h2>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">{% if carro %}Atualizar{% else %}Salvar{% endif %}</button>
+        <a href="{% url 'lista' %}" class="btn btn-secondary mt-3">Cancelar</a>
+    </form>
+</div>      
+{% endblock %}

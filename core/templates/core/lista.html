@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Carros{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <h2>Lista de Carros</h2>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Modelo</th>
+                <th>Cor</th>
+                <th>Ano</th>
+                <th>Marca</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for carro in carros %}
+            <tr>
+                <td>{{ carro.id }}</td>
+                <td>{{ carro.descricao }}</td>
+                <td>{{ carro.modelo }}</td>
+                <td>{{ carro.cor }}</td>
+                <td>{{ carro.ano }}</td>
+                <td>{{ carro.marca.nome }}</td>
+                <td>
+                    <a href="{% url 'atualizar' carro.id %}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{% url 'deletar' carro.id %}" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="mb-3">
+        <a href="{% url 'cadastro' %}" class="btn btn-primary">Adicionar Novo</a>
+    </div>
+</div>
+{% endblock %}
